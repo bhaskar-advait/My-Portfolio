@@ -1720,3 +1720,306 @@ body.dark-theme .header {
 
 }
 
+
+
+
+```css
+/* =========================================================
+   EXTRA POLISH & SCROLL ANIMATIONS
+   Add this at the END of style.css
+   ========================================================= */
+
+
+/* ================= SCROLL REVEAL ================= */
+
+.reveal-element {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.show-element {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ================= STAGGERED CARD ANIMATION ================= */
+
+.skill-card:nth-child(2),
+.project-card:nth-child(2),
+.achievement-card:nth-child(2),
+.certificate-card:nth-child(2) {
+
+    transition-delay: 0.08s;
+}
+
+
+.skill-card:nth-child(3) {
+
+    transition-delay: 0.16s;
+}
+
+
+.skill-card:nth-child(4) {
+
+    transition-delay: 0.24s;
+}
+
+
+.skill-card:nth-child(5) {
+
+    transition-delay: 0.32s;
+}
+
+
+/* ================= ACTIVE NAVIGATION ================= */
+
+.navbar a.active {
+
+    color: var(--primary);
+}
+
+
+.navbar a.active::after {
+
+    width: 100%;
+}
+
+
+/* ================= BETTER CARD HOVER ================= */
+
+.skill-card,
+.project-card,
+.achievement-card,
+.certificate-card,
+.education-card,
+.learning-item {
+
+    will-change: transform;
+}
+
+
+/* ================= PROJECT LINK ARROW ================= */
+
+.project-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.project-link:hover {
+
+    gap: 10px;
+}
+
+
+/* ================= SOCIAL LINK EFFECT ================= */
+
+.social-links a {
+
+    position: relative;
+}
+
+
+.social-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -5px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--primary);
+
+    transition: width 0.25s ease;
+}
+
+
+.social-links a:hover::after {
+
+    width: 100%;
+}
+
+
+/* ================= IMAGE HOVER ================= */
+
+.profile-frame {
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+.profile-frame:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 45px rgba(37, 99, 235, 0.15);
+}
+
+
+/* ================= CERTIFICATE IMAGE HOVER ================= */
+
+.certificate-image img,
+.achievement-image img {
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.certificate-card:hover
+.certificate-image img {
+
+    transform: scale(1.03);
+}
+
+
+.achievement-card:hover
+.achievement-image img {
+
+    transform: scale(1.02);
+}
+
+
+/* ================= MISSION BOX ================= */
+
+.mission-box {
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.mission-box:hover {
+
+    transform: translateY(-4px);
+
+    border-color: var(--primary);
+
+    box-shadow: var(--card-shadow);
+}
+
+
+/* ================= EMAIL ================= */
+
+.email-link {
+
+    position: relative;
+
+    display: inline-block;
+}
+
+
+.email-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -4px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--primary);
+
+    transition: width 0.3s ease;
+}
+
+
+.email-link:hover::after {
+
+    width: 100%;
+}
+
+
+/* ================= SELECTION ================= */
+
+::selection {
+
+    background: var(--primary);
+
+    color: white;
+}
+
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar {
+
+    width: 9px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: var(--bg);
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--primary);
+
+    border-radius: 20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--primary-dark);
+}
+
+
+/* ================= ACCESSIBILITY ================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+
